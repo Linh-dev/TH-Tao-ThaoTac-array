@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT</title>
+    <style>
+        .button {border-radius: 5px;}
+    </style>
+</head>
+<body>
+<p>Sample Screen:</p>
+<input type="text" id="inputValue"/>
+<input type="button" class="button button1" onclick="nut1()" id="button1" value="Add"/>
+<input type="button" class="button button2" onclick="nut2()" id="button2" value="Display"/>
+<div id="display"></div>
+<script>
+    var newArray = [];
+    var x = 0;
+    function nut1(){
+        newArray[x] = document.getElementById("inputValue").value;
+        alert("element " + x + "__value = " + newArray[x]);
+        x++;
+        document.getElementById("inputValue").value = "";
+
+    }
+    function nut2(){
+        //document.getElementById("display").innerHTML = newArray;
+        let elementValue;
+        for (i=0;i<newArray.length;i++){
+            document.getElementById("display").innerHTML += "Element "+i+"__ value = "+newArray[i]+"<br>";
+        }
+
+    }
+</script>
+</body>
+</html>
